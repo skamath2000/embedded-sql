@@ -66,8 +66,10 @@ cx_Oracle.init_oracle_client(lib_dir = "./instantclient_19_8")
 # TODO change credentials
 # Connect as user "user" with password "mypass" to the "CSC423" service
 # running on lawtech.law.miami.edu
+
+#username and password are not specified for security purposes
 connection = cx_Oracle.connect(
-    "sakacsc423", "Cocoarani123", "lawtech.law.miami.edu/CSC_423")
+    "user", "pass", "lawtech.law.miami.edu/CSC_423")
 cursor = connection.cursor()
 
 prompt = "Enter the number of the query you would like to do.\n1. List the details of all clients that have requirements with 2 hours of cleaning per day.\n2. List the details of equipment that have been used for a requirement before 2021.\n3. List the total hours each staff member has worked along with the staff numbers.\n4. List the details of all requirements worked on by a staff member with a salary above 30000.\n5. List the details of all equipment usage and cost per hour for each use.\n"
